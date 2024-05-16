@@ -20,7 +20,7 @@ const PORT = process.env.PORT;
 
 // Middleware to parse JSON request body
 app.use(cors({
-  origin: "https://news-dev-1.vercel.app/",
+  origin: "https://news-dev-1.vercel.app",
   // origin: "*",
 }));
 app.use(express.json());
