@@ -8,6 +8,7 @@ export default defineConfig({
       '/api': {
         target: 'https://blog-78w7.onrender.com',
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
       },
     },
