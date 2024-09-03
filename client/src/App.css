@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
+
+body {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal !important;
+  font-style: normal;
+  background: #000;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0px;
+}
+
+.post-content p {
+  margin-bottom: 0.5rem;
+}
+
+.post-content h1 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.post-content h2 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.post-content a {
+  color: rgb(73, 149, 199);
+  text-decoration: none;
+}
+
+.post-content img {
+  margin: 10px auto ;
+  max-width: 600px;
+  border: 1px solid #161616 ;
+  border-radius: 10px;
+}
+
+.post-content .ql-video{
+  margin: 10px auto ;
+  border: 1px solid #161616 ;
+  border-radius: 10px;
+  height: 300px;
+  width: 600px;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
