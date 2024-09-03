@@ -17,7 +17,7 @@ connectDB();
 const app = express();
 
 // Define a port number
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5500;
 
 const __dirname = path.resolve();
 
