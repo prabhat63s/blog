@@ -142,20 +142,19 @@ const Header = () => {
                     >
                       Dashboard
                     </NavLink>
-                    <button
-                      className="text-xl font-medium"
-                      onClick={handleLogout}
-                    >
-                      Logout
-                    </button>
                   </>
                 ) : (
+                  ""
+                )}
+                {auth?.user ? (
                   <button
                     className="text-xl font-medium"
                     onClick={handleLogout}
                   >
                     Logout
                   </button>
+                ) : (
+                  ""
                 )}
                 <button className="text-xl font-medium" onClick={toggleNav}>
                   Close
