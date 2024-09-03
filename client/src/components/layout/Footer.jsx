@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="w-full border-t border-neutral-800 ">
       <div className="lg:w-[80%] h-[10vh] mx-auto px-4 flex justify-between items-center">
         <Link to="https://prabhat-singh-portfolio.vercel.app" target="_/blank">
-          Copyright © {new Date().getFullYear()} Dev.News
+          Copyright © {new Date().getFullYear()} News.Dev
         </Link>
         <div className="flex gap-4">
           <Link to="https://www.linkedin.com/in/prabhat-singh-10a134255/">

@@ -41,7 +41,7 @@ const Header = () => {
       <div className="lg:w-[80%] h-[10vh] mx-auto px-4 flex justify-between items-center">
         {/* Logo and Desktop Navigation */}
         <NavLink to="/" className="flex items-center gap-2">
-          <h1 className="text-2xl flex items-center">Dev.News</h1>
+          <h1 className="text-2xl flex items-center">News.Dev</h1>
         </NavLink>
         <div className="hidden lg:flex items-center gap-6">
           {links.map(({ to, title }) => (
