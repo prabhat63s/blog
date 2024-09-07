@@ -37,7 +37,7 @@ export default function LoginPage() {
 
       setError(""); // Clear the error state if no validation errors
 
-      const res = await axios.post("http://localhost:5500/api/auth/login", {
+      const res = await axios.post("https://blog-1-w7yr.onrender.com/api/auth/login", {
         email,
         password,
       });

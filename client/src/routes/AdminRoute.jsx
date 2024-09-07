@@ -9,7 +9,7 @@ export default function PrivateRoute() {
 
   useEffect(() => {
     const authCheck = async () => {
-      const res = await axios.get("http://localhost:5500/api/auth/admin-auth");
+      const res = await axios.get("https://blog-1-w7yr.onrender.com/api/auth/admin-auth");
       if (res.data.ok) {
         setOk(true);
       } else {

@@ -63,7 +63,7 @@ export default function CreateBlog() {
       formData.append("photo", photo);
 
       const response = await axios.post(
-        "http://localhost:5500/api/blog/create-blog",
+        "https://blog-1-w7yr.onrender.com/api/blog/create-blog",
         formData
       );
 

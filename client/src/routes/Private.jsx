@@ -9,7 +9,7 @@ export default function Private() {
 
   useEffect(() => {
     const authCheck = async () => {
-      const res = await axios.get("http://localhost:5500/api/auth/user-auth");
+      const res = await axios.get("https://blog-1-w7yr.onrender.com/api/auth/user-auth");
       if (res.data.ok) {
         setOk(true);
       } else {

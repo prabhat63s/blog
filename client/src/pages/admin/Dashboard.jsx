@@ -17,15 +17,15 @@ export default function Dashboard() {
     const fetchData = async () => {
       try {
         // Fetch all users
-        const usersResponse = await axios.get("http://localhost:5500/api/auth/all-users");
+        const usersResponse = await axios.get("https://blog-1-w7yr.onrender.com/api/auth/all-users");
         setUsers(usersResponse.data.users);
 
         // Fetch all blogs
-        const blogsResponse = await axios.get("http://localhost:5500/api/blog/all-blog");
+        const blogsResponse = await axios.get("https://blog-1-w7yr.onrender.com/api/blog/all-blog");
         setBlogs(blogsResponse.data.blogs);
 
         // Fetch all comments
-        const commentsResponse = await axios.get("http://localhost:5500/api/blog/all-comments");
+        const commentsResponse = await axios.get("https://blog-1-w7yr.onrender.com/api/blog/all-comments");
         setComments(commentsResponse.data.comments);
 
         setLoading(false);

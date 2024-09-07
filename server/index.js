@@ -23,7 +23,8 @@ const __dirname = path.resolve();
 
 // Middleware to parse JSON request body
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "https://blog-1-w7yr.onrender.com"],
+  credentials: true,
 }));
 app.use(express.json());
 

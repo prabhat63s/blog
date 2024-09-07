@@ -13,7 +13,7 @@ export default function AllUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5500/api/auth/all-users");
+        const response = await axios.get("https://blog-1-w7yr.onrender.com/api/auth/all-users");
         toast.success("Fetched all users");
         setUsers(response.data.users);
         setLoading(false);
@@ -28,7 +28,7 @@ export default function AllUsers() {
 
   const handleDeleteUser = async (userId) => {
     try {
-      const response = await axios.delete(`http://localhost:5500/api/auth/delete-user/${userId}`);
+      const response = await axios.delete(`https://blog-1-w7yr.onrender.com/api/auth/delete-user/${userId}`);
       if (response.data.success) {
         // Filter out the deleted user from the state
         setUsers(users.filter((user) => user._id !== userId));

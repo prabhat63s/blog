@@ -15,7 +15,7 @@ export default function AllBlogs() {
   // fetch all the blog
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get("http://localhost:5500/api/blog/all-blog");
+      const response = await axios.get("https://blog-1-w7yr.onrender.com/api/blog/all-blog");
       if (response.data.success) {
         setBlogs(response.data.blogs);
         toast.success("fetched all blogs.");
@@ -37,7 +37,7 @@ export default function AllBlogs() {
   // delete blog
   const handleDelete = async (blogId) => {
     try {
-      await axios.delete(`http://localhost:5500/api/blog/delete-blog/${blogId}`);
+      await axios.delete(`https://blog-1-w7yr.onrender.com/api/blog/delete-blog/${blogId}`);
       toast.success("Blog Deleted Successfully");
       // After deletion, fetch updated list of blogs
       fetchBlogs();
@@ -87,7 +87,7 @@ export default function AllBlogs() {
                       <tr key={blog._id} className="hover:bg-neutral-800">
                         <td className="px-6 py-4 whitespace-nowrap">
                           <img
-                            src={`http://localhost:5500/api/blog/photo-blog/${blog._id}`}
+                            src={`https://blog-1-w7yr.onrender.com/api/blog/photo-blog/${blog._id}`}
                             alt={blog.title}
                             className="rounded-full h-10 w-10 border"
                           />

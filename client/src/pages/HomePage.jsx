@@ -11,7 +11,7 @@ export default function HomePage() {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get("http://localhost:5500/api/blog/all-blog");
+      const response = await axios.get("https://blog-1-w7yr.onrender.com/api/blog/all-blog");
       if (response.data.success) {
         setBlogs(response.data.blogs);
       }
@@ -44,7 +44,7 @@ export default function HomePage() {
                 className="w-full h-fit border rounded-md border-neutral-800 hover:opacity-80"
               >
                 <img
-                  src={`http://localhost:5500/api/blog/photo-blog/${blog._id}`}
+                  src={`https://blog-1-w7yr.onrender.com/api/blog/photo-blog/${blog._id}`}
                   alt="Blog Cover"
                   className="rounded-t-md w-full h-44 object-cover"
                   style={{ minHeight: "150px" }}

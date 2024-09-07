@@ -47,12 +47,12 @@ export default function UpdateBlog() {
     const fetchBlog = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5500/api/blog/single-blog/${id}`
+          `https://blog-1-w7yr.onrender.com/api/blog/single-blog/${id}`
         );
         const { title, content } = response.data.blog;
         setTitle(title);
         setContent(content);
-        setImagePreview(`http://localhost:5500/api/blog/photo-blog/${id}`);
+        setImagePreview(`https://blog-1-w7yr.onrender.com/api/blog/photo-blog/${id}`);
       } catch (error) {
         console.error("Error fetching blog:", error);
         toast.error("Failed to fetch blog. Please try again.");
@@ -77,7 +77,7 @@ export default function UpdateBlog() {
       photo && formData.append("photo", photo);
 
       const response = await axios.put(
-        `http://localhost:5500/api/blog/update-blog/${id}`,
+        `https://blog-1-w7yr.onrender.com/api/blog/update-blog/${id}`,
         formData
       );
 

@@ -13,7 +13,7 @@ export default function AllComments() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await axios.get(`http://localhost:5500/api/blog/all-comments`);
+        const response = await axios.get(`https://blog-1-w7yr.onrender.com/api/blog/all-comments`);
         setComments(response.data.comments);
         toast.success("Fetched all comments");
       } catch (error) {
@@ -29,7 +29,7 @@ export default function AllComments() {
   const handleDeleteComment = async (commentId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5500/api/blog/delete-comment/${commentId}`
+        `https://blog-1-w7yr.onrender.com/api/blog/delete-comment/${commentId}`
       );
       if (response.data.success) {
         // Filter out the deleted comment from the state
