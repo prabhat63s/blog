@@ -4,7 +4,7 @@ import { FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 export default function Footer() {
   return (
     <footer className="w-full border-t border-neutral-800 ">
-      <div className="lg:w-[80%] h-[10vh] mx-auto px-4 flex justify-between items-center">
+      <div className="h-[10vh] px-4 flex justify-between items-center">
         <Link to="https://prabhat-singh-portfolio.vercel.app" target="_/blank">
           Copyright © {new Date().getFullYear()} News.Dev
         </Link>

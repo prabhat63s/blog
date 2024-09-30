@@ -4,7 +4,7 @@ import Layout from "../components/layout/Layout";
 export default function AboutPage() {
   return (
     <Layout>
-      <div className="max-w-7xl mx-auto ">
+      <div className="w-full">
         <h1 className="text-2xl font-bold mb-4">
           Welcome to News.Dev: Your Source for Cutting-Edge Technology and AI
           News

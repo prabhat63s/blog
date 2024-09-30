@@ -1,10 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import {toast} from "sonner";
+import { toast } from "sonner";
 import { validateEmail, validatePassword } from "../../utils/helper";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../context/auth";
+import Layout from "../../components/layout/Layout";
 
 export default function RegisterPage() {
   const [auth, setAuth] = useAuth();
@@ -38,11 +39,14 @@ export default function RegisterPage() {
 
       setError(""); // Clear the error state if no validation errors
 
-      const res = await axios.post("https://blog-1-w7yr.onrender.com/api/auth/register", {
-        name,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://blog-1-w7yr.onrender.com/api/auth/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
         setAuth({
@@ -62,90 +66,95 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <div className="w-full max-w-sm p-4 lg:border border-neutral-800 rounded-lg">
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          <h5 className="text-xl font-medium ">Register to news.dev</h5>
-          <div>
-            <label htmlFor="name" className="block mb-2 text-sm font-medium ">
-              Username
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="bg-neutral-900 border border-neutral-800 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Prabhat Singh"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block mb-2 text-sm font-medium ">
-              Your email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-neutral-900 border border-neutral-800 text-sm rounded-lg block w-full p-2.5"
-              placeholder="name@company.com"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="password"
-              className="block mb-2 text-sm font-medium "
-            >
-              Your password
-            </label>
-            <div className="flex items-center bg-neutral-900 border border-neutral-800 text-sm rounded-lg w-full p-2.5">
+    <div className="w-full h-screen">
+      <Layout>
+        <div className="w-full lg:max-w-sm m-auto pt-32 lg:pt-10">
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <h5 className="text-xl font-medium ">Register to news.dev</h5>
+            <div>
+              <label htmlFor="name" className="block mb-2 text-sm font-medium ">
+                Username
+              </label>
               <input
-                type={isShowPassword ? "text" : "password"}
-                name="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                className="w-full outline-none bg-transparent"
+                type="text"
+                name="name"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="bg-neutral-900 border border-neutral-800 text-sm rounded-lg block w-full p-2.5"
+                placeholder="Prabhat Singh"
               />
-              {isShowPassword ? (
-                <IoEyeOutline
-                  size={18}
-                  onClick={() => toggleShowPassword()}
-                  className="text-neutral-600"
-                />
-              ) : (
-                <IoEyeOffOutline
-                  size={18}
-                  onClick={() => toggleShowPassword()}
-                  className="text-neutral-600"
-                />
-              )}
             </div>
-          </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium "
+              >
+                Your email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-neutral-900 border border-neutral-800 text-sm rounded-lg block w-full p-2.5"
+                placeholder="name@company.com"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="password"
+                className="block mb-2 text-sm font-medium "
+              >
+                Your password
+              </label>
+              <div className="flex items-center bg-neutral-900 border border-neutral-800 text-sm rounded-lg w-full p-2.5">
+                <input
+                  type={isShowPassword ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full outline-none bg-transparent"
+                />
+                {isShowPassword ? (
+                  <IoEyeOutline
+                    size={18}
+                    onClick={() => toggleShowPassword()}
+                    className="text-neutral-600"
+                  />
+                ) : (
+                  <IoEyeOffOutline
+                    size={18}
+                    onClick={() => toggleShowPassword()}
+                    className="text-neutral-600"
+                  />
+                )}
+              </div>
+            </div>
 
-          {error && <p className="text-red-500 text-xs">{error}</p>}
-          <button
-            type="submit"
-            className="w-full text-black bg-white hover:bg-neutral-500 gap-2 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-          >
-            Register to your account
-          </button>
-
-          <div className="text-sm font-medium text-gray-500">
-            Already registered?{" "}
-            <Link
-              to="/login"
-              className="text-blue-700 hover:underline dark:text-blue-500"
+            {error && <p className="text-red-500 text-xs">{error}</p>}
+            <button
+              type="submit"
+              className="w-full text-black bg-white hover:bg-neutral-500 gap-2 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
             >
-              Login
-            </Link>
-          </div>
-        </form>
-      </div>
+              Register to your account
+            </button>
+
+            <div className="text-sm font-medium text-gray-500">
+              Already registered?{" "}
+              <Link
+                to="/login"
+                className="text-blue-700 hover:underline dark:text-blue-500"
+              >
+                Login
+              </Link>
+            </div>
+          </form>
+        </div>
+      </Layout>
     </div>
   );
 }

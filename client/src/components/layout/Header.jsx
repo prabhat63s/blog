@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <header className="w-full border-b border-neutral-800 ">
-      <div className="lg:w-[80%] h-[10vh] mx-auto px-4 flex justify-between items-center">
+      <div className="h-[10vh] w-full px-4 flex justify-between items-center">
         {/* Logo and Desktop Navigation */}
         <NavLink to="/" className="flex items-center gap-2">
           <h1 className="text-2xl flex items-center">News.Dev</h1>

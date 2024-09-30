@@ -30,7 +30,7 @@ export default function ContactPage() {
   return (
     <Layout>
       {" "}
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full">
         <h1 className="text-2xl font-bold mb-6">Contact Us</h1>
 
         <div className="mb-6">
